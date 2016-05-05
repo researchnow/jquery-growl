@@ -135,6 +135,10 @@ Copyright 2015 Kevin Sylvestre
     };
 
     Growl.prototype.click = function(event) {
+      if (this.settings.clickEvent != null) {
+        this.settings.clickEvent();
+      }
+
       if (this.settings.url != null) {
         event.preventDefault();
         event.stopPropagation();
